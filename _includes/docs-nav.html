@@ -1,0 +1,17 @@
+{% assign docs = site.docs | sort: 'order' %}
+<ul class="docs-menu">
+    {% for doc in docs %}
+        <li class="docs-menu-item {% if doc.url == page.url %}active{% endif %}">
+            <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+            {% if doc.children %}
+                <ul class="docs-submenu">
+                    {% for child in doc.children %}
+                        <li class="docs-submenu-item {% if child.url == page.url %}active{% endif %}">
+                            <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul> 

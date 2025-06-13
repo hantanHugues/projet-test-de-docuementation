@@ -1,0 +1,41 @@
+title: TEKBOT Docs
+description: Documentation pour TEKBOT ROBOTICS CHALLENGE 2025
+baseurl: "/2025-Team-IFRI-Docs"
+url: "https://votre-username.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: "docs"
+      type: "docs"
+    values:
+      layout: "default"
+
+# Include paths
+include:
+  - docs
+  - static
+  - media
+  - assets
+
+# Exclude from processing
+exclude:
+  - node_modules
+  - .vite
+  - components
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore 
